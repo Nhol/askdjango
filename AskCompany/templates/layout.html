@@ -1,13 +1,17 @@
+{% load static %}
 <!doctype html>
 <html>
     <head>
         <meta charset="utf-8" />
         <title>{% block title %}Ask Company{% endblock %}</title>
         <style>
-            body { background-color: lightyellow; }
+            body { background-color: lightpink; }
         </style>
 {#        CSS 사용을 대비한 블럭#}
-        {%  block extra_head %}{% endblock %}
+
+        {%  block extra_head %}
+            <link rel="stylesheet" href="{% static "main.css"%}">
+        {% endblock %}
     </head>
     <body>
         <h1>Ask Company</h1>
@@ -18,6 +22,9 @@
         </hr>
         &copy; 2018. Ask Company.
 {#        javascript 사용을 대비한 블럭#}
-        {% block extra_body %}{% endblock %}
+
+        {% block extra_body %}
+            <script src="{% static "main.js" %}"></script>
+        {% endblock %}
     </body>
 </html>
